@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="react.min.js"></script>
+    <script src="JSXTransformer.js"></script>
+    <script type="text/jsx">
+        var style={
+            color:"red",
+            border:"1px #000 solid"
+        };
+        var HelloWorld=React.createClass({
+            //请去掉下面的注释
+//            getName:function(){
+//                if(this.props.name)
+//                    return this.props.name;
+//                else
+//                    return "你好世界";
+//            },
+
+            //method 1
+            <!--render:function(){-->
+            <!--return <p> ni hao ma {this.props.name? this.props.name : " 梁铖城是好人"}-->
+            // <!--</p>-->
+            <!--}-->
+
+            //method
+            //render:function(){
+            //  var name=this.getName();
+            //return <p> 你好啊抽抽 {name}</p>
+            //}
+
+            <!--render:function(){-->
+            //<!--return <p> 你好啊抽抽 {this.props.name || "小乌龟"}</p>-->
+            <!--}-->
+
+            render:function(){
+                return <p> hello {(function(obj){
+                    if(obj.props.name)
+                        return obj.props.name;
+                    else
+                        return "====";
+                    })(this)
+                }</p>
+            }
+        });
+        React.render(<div style={style}><HelloWorld name="张光发"></HelloWorld></div>,document.body);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

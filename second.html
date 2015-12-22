@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="react.min.js"></script>
+    <script src="JSXTransformer.js"></script>
+    <script type="text/jsx">
+        var style={
+            color:"red",
+            border:"1px #000 solid"
+        };
+        var rawHTML={
+            _html : "<h1> 我是广发</h1>"
+        };
+        var HelloWorld=React.createClass({
+            render:function(){
+                return <p ref="chidp"> hello 小美</p>
+            }
+        });
+        //我错在哪了?
+        React.render(<div style={style} dangerouslySetInnerHTML={rawHTML}></div>,document.body);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
